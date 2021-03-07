@@ -120,10 +120,22 @@ let watchList = [
 
 //MAP method to get the same resualt;
   let itemsInArr = watchList.map(function(x){
-     let modifiedObj={}
-     modifiedObj.title=x.Title;
-     modifiedObj.rating=x.imdbRating;
-      return modifiedObj
+        let modifiedObj={}
+        modifiedObj.title=x.Title;
+        modifiedObj.rating=x.imdbRating;
+    return modifiedObj;
   });
  console.log(itemsInArr);
  console.log("---------------");
+ 
+ /*
+ Original source: freecodecamp
+ The variable watchList holds an array of objects with information on several movies. Use a combination of filter and map on watchList to assign a new array of objects with only title and rating keys. The new array should only include objects where imdbRating is greater than or equal to 8.0. 
+ */
+
+let filteredList = itemsInArr.filter(y=>{
+    if(parseInt(y.rating)>=8){
+        return itemsInArr;
+    }
+});
+console.log(filteredList);
