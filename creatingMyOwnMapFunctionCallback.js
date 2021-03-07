@@ -19,3 +19,31 @@ let new_s = s.myMap(function(item) {
 });
 
 console.log(new_s)
+
+/*
+    ##### More about "this"
+=> "this" is the global object (window in a browser)in a function invocation.
+=> The context of the inner function (except arrow function) depends only on its own invocation type, but not on the outer function’s context.
+ psuedo code:
+    someObj {
+        some var,
+        some method: function(){
+            this===someObj //true;
+        function(){
+            this===someObj //false
+            }
+        },
+        arrFun = ()=>{
+            this===someObj //true;
+        }
+    }
+*/
+
+function add(a,b){
+    //.log(this===window);
+    this.myNum=8;
+    return console.log(a+b),console.log(myNum);
+}
+
+add(4,8);//12,8
+console.log(myNum);//8
