@@ -26,3 +26,14 @@ function alphabeticalOrder(arr) {
 
   producuts.sort((x,y)=>x.price-y.price);
   console.log(producuts);
+
+//The aim is not to mutate original array
+let globalArray = [5, 6, 3, 2, 9];
+function nonMutatingSort(arr) {
+    let copyOfArr=[];
+    copyOfArr=arr.slice();
+    copyOfArr.sort((a,b)=>a-b);
+    return console.log(copyOfArr);
+}
+console.log(globalArray);
+nonMutatingSort(globalArray);
