@@ -21,6 +21,7 @@ function sentensify(str){
     return result;
 }
 let brokenStr = "The.force.is.strong.with.this.one.test.test1";
+autohyphen(sentensify(brokenStr));
 console.log(sentensify(brokenStr));
 autohyphen(sentensify(brokenStr));
 
@@ -39,5 +40,6 @@ function urlSlug(tit) {
    return seperateWord.join("-").toLowerCase();
     
 }
+autohyphen(urlSlug(title));
 console.log(urlSlug(title));
 autohyphen(urlSlug(title));
